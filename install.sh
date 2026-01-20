@@ -1,5 +1,3 @@
-mirror
-
 DEPS="yay uv flatpak ghostty \
 	tesseract tesseract-data-osd tesseract-data-eng tesseract-data-rus \
 	grim slurp cliphist wl-clipboard \
