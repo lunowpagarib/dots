@@ -32,3 +32,4 @@ git clone https://github.com/lunowpagarib/dots.git
 cd dots
 rm -rf ~/.config && mv config ~/.config
 rm -rf ~/.themes && mv themes ~/.themes
+cd .. && rm -rf dots
