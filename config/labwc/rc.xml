@@ -1,0 +1,169 @@
+<?xml version="1.0"?>
+<labwc_config>
+  <keyboard>
+  	<numlock>on</numlock>
+    <!-- app launchers  -->
+    <keybind key="Super_L" onRelease="yes">
+      <action name="Execute" command="bash ~/.config/labwc/launch-scripts/toggler.sh fuzzel"/>
+    </keybind>
+    <keybind key="W-v">
+      <action name="Execute" command="bash ~/.config/labwc/launch-scripts/clipboard.sh"/>
+    </keybind>
+    <keybind key="W-t">
+      <action name="Execute" command="bash ~/.config/labwc/launch-scripts/ghostty.sh"/>
+    </keybind>
+    <keybind key="W-1">
+      <action name="Execute" command="bash ~/.config/labwc/launch-scripts/ghostty.sh"/>
+    </keybind>
+    <keybind key="W-b">
+      <action name="Execute" command="bash ~/.config/labwc/launch-scripts/zen-browser.sh"/>
+    </keybind>
+    <keybind key="W-2">
+      <action name="Execute" command="bash ~/.config/labwc/launch-scripts/zen-browser.sh"/>
+    </keybind>
+    <keybind key="W-f">
+      <action name="Execute" command="bash ~/.config/labwc/launch-scripts/files.sh"/>
+    </keybind>
+    <keybind key="W-3">
+      <action name="Execute" command="bash ~/.config/labwc/launch-scripts/other-apps.sh 1p"/>
+    </keybind>
+    <keybind key="W-4">
+      <action name="Execute" command="bash ~/.config/labwc/launch-scripts/other-apps.sh 2p"/>
+    </keybind>
+    <keybind key="W-5">
+      <action name="Execute" command="bash ~/.config/labwc/launch-scripts/other-apps.sh 3p"/>
+    </keybind>
+    <keybind key="W-6">
+      <action name="Execute" command="bash ~/.config/labwc/launch-scripts/other-apps.sh 4p"/>
+    </keybind>
+    <!-- whatever -->
+    <keybind key="C-W-a">
+      <action name="SnapToEdge" direction="left" combine="yes"/>
+    </keybind>
+    <keybind key="C-W-d">
+      <action name="SnapToEdge" direction="right" combine="yes"/>
+    </keybind>
+    <keybind key="W-l">
+      <action name="Execute" command="swaylock -f -c 000000"/>
+    </keybind>
+    <keybind key="W-q">
+      <action name="Close"/>
+    </keybind>
+    <keybind key="W-d">
+      <action name="NextWindow"/>
+    </keybind>
+    <keybind key="A-Escape">
+      <action name="NextWindow"/>
+    </keybind>
+    <keybind key="W-m">
+  	  <action name="Iconify" />
+    </keybind>
+    <keybind key="W-a">
+      <action name="PreviousWindow"/>
+    </keybind>
+    <keybind key="W-e">
+      <action name="ToggleMaximize"/>
+    </keybind>
+    <keybind key="C-S-l">
+      <action name="Execute" command="busctl --user -- set-property rs.wl-gammarelay / rs.wl.gammarelay Temperature q 6000"/>
+    </keybind>
+    <keybind key="C-S-.">
+      <action name="Execute" command="busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n -300"/>
+    </keybind>
+    <keybind key="C-S-,">
+      <action name="Execute" command="busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n +300"/>
+    </keybind>
+    <keybind key="XF86_AudioLowerVolume">
+      <action name="Execute" command="amixer sset Master 5%-"/>
+    </keybind>
+    <keybind key="XF86_AudioRaiseVolume">
+      <action name="Execute" command="amixer sset Master 5%+"/>
+    </keybind>
+    <keybind key="XF86_AudioMute">
+      <action name="Execute" command="amixer sset Master toggle"/>
+    </keybind>
+    <keybind key="XF86_MonBrightnessUp">
+      <action name="Execute" command="brightnessctl set +2%"/>
+    </keybind>
+    <keybind key="XF86_MonBrightnessDown">
+      <action name="Execute" command="brightnessctl set 2%-"/>
+    </keybind>
+    <keybind key="S-W-s">
+      <action name="Execute">
+        <command>sh -c 'grim -g "$(slurp)" - | wl-copy'</command>
+      </action>
+    </keybind>
+    <keybind key="S-W-f">
+      <action name="Execute">
+        <command>sh -c 'grim -g "$(slurp)" - | tesseract stdin stdout -l eng | wl-copy'</command>
+      </action>
+    </keybind>
+    <keybind key="C-W-f">
+      <action name="Execute">
+        <command>sh -c 'grim -g "$(slurp)" - | tesseract stdin stdout -l rus | wl-copy'</command>
+      </action>
+    </keybind>
+  </keyboard>
+  <libinput>
+    <!-- <device category="default"> -->
+    <device category="ASUF1203:00 2808:0217 Touchpad">
+      <naturalScroll>yes</naturalScroll>
+    </device>
+  </libinput>
+  <windowRules>
+    <!-- Action -->
+    <windowRule identifier="com.system76.CosmicFiles">
+      <action name="Maximize" direction="both"/>
+    </windowRule>
+    <!-- zen browser -->
+    <windowRule identifier="zen">
+      <action name="Maximize" direction="both"/>
+    </windowRule>
+    <windowRule identifier="app.zen_browser.zen">
+      <action name="Maximize" direction="both"/>
+    </windowRule>
+    
+    <windowRule identifier="org.pulseaudio.pavucontrol">
+      <action name="Maximize" direction="both"/>
+    </windowRule>
+    <windowRule identifier="org.keepassxc.KeePassXC">
+      <action name="Maximize" direction="both"/>
+    </windowRule>
+    <windowRule identifier="steamwebhelper: Steam">
+      <action name="Maximize" direction="both"/>
+    </windowRule>
+    <windowRule identifier="krita">
+      <action name="Maximize" direction="both"/>
+    </windowRule>
+    <windowRule identifier="obsidian">
+      <action name="Maximize" direction="both"/>
+    </windowRule>
+    <windowRule identifier="discord">
+      <action name="Maximize" direction="both"/>
+    </windowRule>
+    <windowRule identifier="org.qbittorrent.qBittorrent">
+      <action name="Maximize" direction="both"/>
+    </windowRule>
+    <windowRule identifier="io.github.kolunmi.Bazaar">
+      <action name="Maximize" direction="both"/>
+    </windowRule>
+    <windowRule identifier="Throne">
+      <action name="Maximize" direction="both"/>
+    </windowRule>
+  </windowRules>
+  <theme>
+    <name>Adwaita-Labwc-dark</name>
+    <titlebar layout=":menu,iconify,max,close" showTitle="yes"/>
+    <cornerRadius>14</cornerRadius>
+    <dropShadows>yes</dropShadows>
+    <font place="ActiveWindow" name="Cantarell" size="12" weight="bold"/>
+    <font place="InactiveWindow" name="Cantarell" size="12" weight="bold"/>
+    <font place="MenuHeader" name="Cantarell" size="12" weight="bold"/>
+    <font place="MenuItem" name="Cantarell" size="12"/>
+    <font place="OnScreenDisplay" name="Cantarell" size="12"/>
+    <icon>Numix-Circle</icon>
+  </theme>
+  <snapping>
+    <cornerRange>51</cornerRange>
+  </snapping>
+</labwc_config>

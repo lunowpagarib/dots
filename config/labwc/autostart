@@ -1,0 +1,23 @@
+/usr/libexec/xdg-desktop-portal-gtk -r &
+/usr/libexec/xdg-document-portal -r &
+/usr/libexec/flatpak-portal --no-idle-exit -r &
+sh -c 'sleep 5;exec /usr/libexec/xdg-desktop-portal -r' &
+sh -c 'sleep 5;exec /usr/libexec/xdg-desktop-portal-wlr -r' &
+
+swaybg -i ~/Downloads/aesthetic-wallpapers/images/wallpaper3-dark.png >/dev/null 2>&1 &
+
+waybar --log-level off >/dev/null 2>&1 &
+
+swayidle -w \
+	timeout 450 'swaylock -f -c 000000' \
+	timeout 500 'wlopm --off \*' \
+	resume 'wlopm --on \*' \
+	before-sleep 'swaylock -f -c 000000' >/dev/null 2>&1 &
+
+wl-gammarelay-rs 2>&1 &
+
+/usr/lib/mate-polkit/polkit-mate-authentication-agent-1 >/dev/null 2>&1 &
+
+wl-paste --watch cliphist store
+
+iw dev wlan0 set power_save off

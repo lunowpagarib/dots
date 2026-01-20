@@ -1,0 +1,6 @@
+maximize=true
+theme=Afterglow
+window-decoration=false
+
+keybind = ctrl+shift+d=new_split:right
+keybind = ctrl+shift+w=close_surface
