@@ -1,6 +1,3 @@
-rm -rf ~/.config
-rm -rf ~/.themes
-
 mirror
 
 DEPS="yay uv flatpak ghostty \
@@ -12,7 +9,7 @@ DEPS="yay uv flatpak ghostty \
 	mate-calc gpicview mpv thunar \
 	zen-browser-bin" 
 
-sudo pacman -Sy --noconfirm --needed $DEPS
+sudo pacman -S --noconfirm --needed $DEPS
 
 gio mime image/webp gpicview.desktop
 gio mime image/jpeg gpicview.desktop
@@ -35,5 +32,5 @@ sudo systemctl enable amd-disable-c6
 
 git clone https://github.com/lunowpagarib/dots.git
 cd dots
-mv config ~/.config
-mv themes ~/.themes
+rm -rf ~/.config && mv config ~/.config
+rm -rf ~/.themes && mv themes ~/.themes
