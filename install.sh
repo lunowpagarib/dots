@@ -9,6 +9,8 @@ DEPS="yay uv flatpak ghostty \
 
 sudo pacman -S --noconfirm --needed $DEPS
 
+sudo systemctl enable lemurs
+
 gio mime image/webp gpicview.desktop
 gio mime image/jpeg gpicview.desktop
 gio mime image/png gpicview.desktop
