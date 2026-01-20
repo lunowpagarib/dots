@@ -4,7 +4,7 @@ DEPS="yay uv flatpak ghostty \
 	labwc fuzzel waybar \
 	lemurs wlopm mate-polkit xdg-desktop-portal-gtk \
 	swayidle swaybg swaylock brightnessctl \
-	mate-calc gpicview mpv thunar \
+	mate-calc gpicview mpv thunar mousepad \
 	zen-browser-bin" 
 
 sudo pacman -S --noconfirm --needed $DEPS
