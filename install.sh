@@ -29,7 +29,7 @@ AUR_DEPS="xkblayout-state-git \
 		rtw89-dkms-git \
 		amd-disable-c6-git"
 
-yay -S $AUR_DEPS
+yay -S --needed $AUR_DEPS
 
 sudo systemctl enable amd-disable-c6
 
