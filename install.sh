@@ -1,30 +1,39 @@
-# rm -rf ~/.config
-# rm -rf ~/.themes
-# 
-# mirror
+rm -rf ~/.config
+rm -rf ~/.themes
+
+mirror
 
 DEPS="yay uv flatpak ghostty \
 	tesseract tesseract-data-osd tesseract-data-eng tesseract-data-rus \
 	grim slurp cliphist wl-clipboard \
 	labwc fuzzel waybar \
-	lemurs wlopm lxqt-policykit xdg-desktop-portal-gtk \
+	lemurs wlopm mate-polkit xdg-desktop-portal-gtk \
 	swayidle swaybg swaylock brightnessctl \
-	mate-calc gpicview mpv thunar" 
+	mate-calc gpicview mpv thunar \
+	zen-browser-bin" 
 
 sudo pacman -Sy --noconfirm --needed $DEPS
 
-printf $EUID
+gio mime image/webp gpicview.desktop
+gio mime image/jpeg gpicview.desktop
+gio mime image/png gpicview.desktop
 
-git clone https://github.com/lunowpagarib/disable-c6.git
+gio mime video/mp4 gpicview.desktop
+gio mime video/mpv gpicview.desktop
+gio mime video/webm gpicview.desktop
 
-# gio mime image/webp gpicview.desktop
-# gio mime image/jpeg gpicview.desktop
-# gio mime image/png gpicview.desktop
-# 
-# gio mime video/mp4 gpicview.desktop
-# gio mime video/mpv gpicview.desktop
-# gio mime video/webm gpicview.desktop
-# 
-# gio mime inode/directory thunar.desktop
-# 
-# git clone 
+gio mime inode/directory thunar.desktop
+
+AUR_DEPS="xkblayout-state-git \
+		wl-gammarelay-rs \
+		rtw89-dkms-git \
+		amd-disable-c6-git"
+
+yay -S $AUR_DEPS
+
+sudo systemctl enable amd-disable-c6
+
+git clone https://github.com/lunowpagarib/dots.git
+cd dots
+mv config ~/.config
+mv themes ~/.themes
