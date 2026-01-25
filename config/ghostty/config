@@ -4,3 +4,4 @@ window-decoration=false
 
 keybind = ctrl+shift+d=new_split:right
 keybind = ctrl+shift+w=close_surface
+keybind = ctrl+shift+e=equalize_splits

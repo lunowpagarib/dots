@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Check if a process with that exact command line exists.
-if pgrep -x "$1" > 0; then
+if pgrep -x "$1" > 0 ; then
     # Kill all matching processes.
     # echo "$1"
     pkill "$1"
